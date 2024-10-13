@@ -81,8 +81,8 @@ if __name__ == "__main__":
     cap = cv2.VideoCapture("rtsp://admin:anas1155@192.168.1.168:554/Streaming/Channels/1/")
     
     cap = cv2.VideoCapture("speed3.mp4")
-    device = hailo.Device()
-    pipeline = hailo.create_pipeline(device)
+    # device = hailo.Device()
+    # pipeline = hailo.create_pipeline(device)
 
     while True:                              
         success, frame = cap.read()
@@ -101,7 +101,7 @@ if __name__ == "__main__":
             break
 
     cap.release()
-    cv2.destroyAllWindows()
+    # cv2.destroyAllWindows()
     
     
     # # Create an instance of the user app callback class
