@@ -80,7 +80,7 @@ def app_callback(pad, info, user_data):
 if __name__ == "__main__":
     cap = cv2.VideoCapture("rtsp://admin:anas1155@192.168.1.168:554/Streaming/Channels/1/")
     
-    cap = cv2.VideoCapture("speed3.mp4")
+    # cap = cv2.VideoCapture("speed3.mp4")
     # device = hailo.Device()
     # pipeline = hailo.create_pipeline(device)
 
