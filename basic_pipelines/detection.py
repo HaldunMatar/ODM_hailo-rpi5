@@ -31,6 +31,10 @@ class user_app_callback_class(app_callback_class):
 # This is the callback function that will be called when data is available from the pipeline
 def app_callback(pad, info, user_data):
     # Get the GstBuffer from the probe info
+    print( f"Frame type(info) : {info}\n ")
+    print( f"Frame type(pad) : {pad}\n ")
+    print( f"Frame type(user_data) : {user_data}\n ")
+    
     buffer = info.get_buffer()
     # Check if the buffer is valid
     if buffer is None:
@@ -53,6 +57,7 @@ def app_callback(pad, info, user_data):
     
     print( f"Frame count: {user_data.get_count()}\n")
     print( f"Frame type(buffer) : {buffer}\n ")
+    #  <Gst.Buffer object at 0x7ffee16e60f0 (GstBuffer at 0x7ffe8c1db900)>
     roi = hailo.get_roi_from_buffer(buffer)
     detections = roi.get_objects_typed(hailo.HAILO_DETECTION)
 
