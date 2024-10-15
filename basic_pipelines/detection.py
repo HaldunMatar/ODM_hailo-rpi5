@@ -50,6 +50,9 @@ def app_callback(pad, info, user_data):
         frame = get_numpy_from_buffer(buffer, format, width, height)
 
     # Get the detections from the buffer
+    
+    print( f"Frame count: {user_data.get_count()}\n")
+    print( f"Frame type(buffer) : {buffer}\n ")
     roi = hailo.get_roi_from_buffer(buffer)
     detections = roi.get_objects_typed(hailo.HAILO_DETECTION)
 
